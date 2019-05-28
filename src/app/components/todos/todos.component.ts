@@ -12,6 +12,11 @@ export class TodosComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.todos = [{
+      id: 1,
+      title: "Todo One",
+      completed: false
+    }]
   }
 
 }
