@@ -9,10 +9,11 @@ import { Todo } from '../models/Todo';
   providedIn: 'root'
 })
 export class TodoService {
-  todosUrl: 'https://jsonplaceholder.typicode.com/todos';
+  todosUrl: string = 'https://jsonplaceholder.typicode.com/todos';
+  todosLimit = '?_limit=5';
   constructor(private http: HttpClient) { }
 
   getTodos(): Observable<Todo[]> {
-    return this.http.get<Todo[]>(todosUrl);
+    return this.http.get<Todo[]>(`${this.todosUrl}${this.todosLimit}`);
   }
 }
